@@ -6,7 +6,7 @@ using RunGroupWebApp.Interfaces;
 
 namespace RunGroupWebApp.Services
 {
-    public interface PhotoService : IPhotoService
+    public class PhotoService : IPhotoService
     {
         private readonly Cloudinary _cloundinary;
         public PhotoService(IOptions<CloudinarySettings> config)
