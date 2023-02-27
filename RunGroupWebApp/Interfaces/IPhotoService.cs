@@ -1,4 +1,6 @@
-﻿namespace RunGroupWebApp.Interfaces
+﻿using CloudinaryDotNet.Actions;
+
+namespace RunGroupWebApp.Interfaces
 {
     public interface IPhotoService
     {
