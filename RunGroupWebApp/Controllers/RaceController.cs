@@ -66,7 +66,7 @@ namespace RunGroupWebApp.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var race = await _raceRespository.GetByIdAsync(id);
+            var race = await _raceRepository.GetByIdAsync(id);
             if (race == null) return View("Error");
             var clubVM = new EditRaceViewModel
             {
@@ -89,7 +89,7 @@ namespace RunGroupWebApp.Controllers
                 return View("Edit", raceVM);
             }
 
-            var userRace = await _raceRespository.GetByIdAsyncNoTracking(id);
+            var userRace = await _raceRepository.GetByIdAsyncNoTracking(id);
 
             if (userRace != null)
             {
@@ -115,7 +115,7 @@ namespace RunGroupWebApp.Controllers
                     Address = raceVM.Address,
                 };
 
-                _raceRespository.Update(race);
+                _raceRepository.Update(race);
 
                 return RedirectToAction("Index");
             }
